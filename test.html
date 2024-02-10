@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <script>
+        function devModePasif() {
+            sagTikEngel();
+            konsolkapat();
+        }
+
+        function sagTikEngel() {
+            document.addEventListener("contextmenu", function (dilosurucu) {
+                dilosurucu.preventDefault();
+            });
+        }
+
+        function konsolkapat() {
+            DisableDevtool({
+                ondevtoolopen(type, next) {
+                    next();
+                    alert("You think you're too smart, don't you?");
+                }
+            });
+        }
+
+        // Bu iki fonksiyonu otomatik olarak çağırmaktan vazgeçiyoruz.
+        //konsolkapat();
+        //sagTikEngel();
+    </script>
+</head>
+<body>
+
+<button onclick='devModePasif()'>Dev Mod</button>
+
+</body>
+</html>
+
